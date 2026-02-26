@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Daisy Mensa‑Yawson · portfolio</title>
+    <!-- Font Awesome 6 (free) – minimal, professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f7;  /* subtle grey-blue */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #1b384f;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* main card – extra clean, floating */
+        .portfolio {
+            max-width: 1150px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 3rem;
+            box-shadow: 0 35px 60px -20px rgba(10, 40, 65, 0.3);
+            overflow: hidden;
+            transition: border-radius 0.2s;
+        }
+
+        .portfolio-inner {
+            padding: 2.4rem 2.8rem;
+        }
+
+        /* ---------- refined photo header ---------- */
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            align-items: center;
+            margin-bottom: 2.2rem;
+        }
+
+        .photo-frame {
+            flex: 0 0 148px;
+            width: 148px;
+            height: 148px;
+            border-radius: 2.5rem 2.5rem 2rem 2.5rem;
+            background: linear-gradient(135deg, #dde9f5, #c2d8ed);
+            box-shadow: 0 20px 30px -12px rgba(27, 67, 99, 0.3);
+            overflow: hidden;
+            border: 4px solid white;
+            transition: transform 0.25s ease;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #d2e2f2, #bfd6ea);
+            color: #1f4f7a;
+            font-weight: 460;
+        }
+
+        .photo-placeholder i {
+            font-size: 3.2rem;
+            opacity: 0.8;
+            margin-bottom: 0.2rem;
+        }
+
+        .name-title h1 {
+            font-size: 2.8rem;
+            font-weight: 640;
+            letter-spacing: -0.02em;
+            color: #0b314b;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1.2rem;
+            align-items: center;
+        }
+
+        .pill {
+            background: #ecf3fa;
+            padding: 0.55rem 1.3rem;
+            border-radius: 3rem;
+            font-size: 0.95rem;
+            color: #1b4f7a;
+            border: 1px solid #c7d9ef;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            font-weight: 470;
+        }
+
+        .pill i {
+            color: #2e6b9b;
+            font-size: 0.95rem;
+        }
+
+        .pill:hover {
+            background: #deecfb;
+            border-color: #8fb4da;
+            transform: translateY(-2px);
+        }
+
+        /* linkedin pill special subtle style */
+        .linkedin-pill {
+            background: #e1ebf7;
+            border-color: #b3cce8;
+            padding: 0.55rem 1.3rem;
+        }
+
+        .linkedin-pill i {
+            color: #0a66c2; 
+        }
+
+        /* section headings – clean with soft gradient */
+        .section-head {
+            font-size: 1.6rem;
+            font-weight: 580;
+            color: #0b3857;
+            margin: 2.5rem 0 1.3rem 0;
+            padding-left: 1.2rem;
+            border-left: 6px solid #4682b4;
+            background: linear-gradient(90deg, #f6fafd, transparent);
+        }
+
+        /* summary card – subtle inner glow */
+        .summary-card {
+            background: #f5faff;
+            border-radius: 2.2rem;
+            padding: 1.6rem 2rem;
+            border: 1px solid #cde0f2;
+            font-size: 1rem;
+            color: #1b4b70;
+            box-shadow: inset 0 2px 8px rgba(255,255,255,0.9), 0 8px 18px -12px #2f6280;
+        }
+
+        /* competencies as refined tags */
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1rem;
+            background: #f6fbfe;
+            padding: 1.5rem 2rem;
+            border-radius: 4rem;
+            border: 1px solid #c9ddf2;
+        }
+
+        .tag {
+            background: white;
+            border: 1px solid #b4ceed;
+            padding: 0.5rem 1.4rem;
+            border-radius: 3rem;
+            font-size: 0.92rem;
+            font-weight: 480;
+            color: #1b5380;
+            box-shadow: 0 3px 8px -5px rgba(0,35,70,0.1);
+            transition: 0.1s;
+        }
+
+        .tag:hover {
+            background: #ecf5fd;
+        }
+
+        /* education grid – softer cards */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .edu-item {
+            background: #f2f8ff;
+            border-radius: 2rem;
+            padding: 1.5rem 1.5rem;
+            border: 1px solid #c9ddf0;
+            box-shadow: 0 8px 18px -12px #3f6f93;
+        }
+
+        .edu-item strong {
+            font-size: 1.2rem;
+            color: #154b74;
+            font-weight: 630;
+        }
+
+        .edu-detail {
+            color: #2c628b;
+            margin: 0.3rem 0 0.3rem;
+        }
+
+        .edu-badge {
+            background: #deebf8;
+            display: inline-block;
+            padding: 0.25rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 520;
+            color: #0f3f62;
+        }
+
+        /* professional experience – carousel + sleek cards */
+        .carousel-container {
+            position: relative;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1.6rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.5rem 0.2rem 1.5rem 0.2rem;
+            scrollbar-width: thin;
+            scrollbar-color: #96b3cf #e2ecf5;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carousel-track::-webkit-scrollbar-track {
+            background: #e2ecf5;
+            border-radius: 20px;
+        }
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: #96b3cf;
+            border-radius: 20px;
+        }
+
+        .exp-carousel-card {
+            flex: 0 0 340px;
+            scroll-snap-align: start;
+            background: #ffffff;
+            border-radius: 2.2rem;
+            padding: 1.8rem 1.8rem;
+            border: 1px solid #c6d9ee;
+            box-shadow: 0 20px 35px -20px rgba(18, 60, 95, 0.25);
+            transition: all 0.2s;
+        }
+
+        .exp-carousel-card:hover {
+            border-color: #8fb9df;
+            box-shadow: 0 25px 40px -18px #1f5780;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #0d3b5e;
+        }
+
+        .exp-org {
+            font-weight: 600;
+            color: #25638b;
+            margin: 0.1rem 0 0.3rem;
+        }
+
+        .exp-date {
+            background: #e1edf9;
+            padding: 0.2rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0.3rem 0 0.9rem;
+            color: #0f4670;
+            font-weight: 500;
+        }
+
+        .exp-bullet {
+            list-style: none;
+        }
+
+        .exp-bullet li {
+            display: flex;
+            gap: 0.7rem;
+            font-size: 0.92rem;
+            margin-bottom: 0.5rem;
+            color: #1a4a70;
+        }
+
+        .exp-bullet li i {
+            color: #3a78a7;
+            font-size: 0.7rem;
+            margin-top: 0.35rem;
+            min-width: 14px;
+        }
+
+        .carousel-hint {
+            display: flex;
+            justify-content: center;
+            gap: 0.7rem;
+            margin: 0.2rem 0 0.5rem;
+        }
+        .carousel-hint span {
+            width: 8px;
+            height: 8px;
+            background: #c4d6e9;
+            border-radius: 20px;
+            transition: 0.2s;
+        }
+
+        /* technical skills – elegant panel */
+        .skills-panel {
+            background: linear-gradient(135deg, #f6fafe, #edf4fc);
+            border-radius: 2.5rem;
+            padding: 2rem 2.2rem;
+            border: 1px solid #c1d6ec;
+            box-shadow: inset 0 1px 5px rgba(255,255,255,0.7);
+        }
+
+        .skill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-bottom: 1.4rem;
+            align-items: baseline;
+        }
+
+        .skill-cat {
+            font-weight: 640;
+            color: #13456b;
+            min-width: 150px;
+            font-size: 1.05rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+        }
+
+        .skill-chip {
+            background: white;
+            border: 1px solid #aac4e2;
+            border-radius: 2.5rem;
+            padding: 0.4rem 1.3rem;
+            font-size: 0.9rem;
+            color: #1a527d;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* leadership card */
+        .lead-card {
+            background: #f2f9ff;
+            border-radius: 2.2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #c2d8ef;
+            box-shadow: 0 12px 24px -16px #2b6286;
+            max-width: 750px;
+        }
+
+        .lead-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #154d78;
+        }
+
+        /* attributes */
+        .attr-wrap {
+            background: #f1f7fe;
+            border-radius: 3rem;
+            padding: 1.3rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            border: 1px solid #bfd5ec;
+        }
+
+        .attr-item {
+            background: white;
+            border: 1px solid #b0cae7;
+            border-radius: 3rem;
+            padding: 0.45rem 1.4rem;
+            font-size: 0.92rem;
+            color: #1b4d75;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #bed2e8;
+            text-align: center;
+            color: #4b6f8f;
+            font-size: 0.92rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+        }
+
+        .footer-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-item i {
+            color: #3f7199;
+        }
+
+        /* mobile refinement */
+        @media (max-width: 650px) {
+            body { padding: 0.5rem; }
+            .portfolio-inner { padding: 1.6rem 1.2rem; }
+            .profile-header { justify-content: center; text-align: center; gap: 1rem; }
+            .photo-frame { flex: 0 0 130px; width: 130px; height: 130px; }
+            .name-title h1 { font-size: 2.1rem; }
+            .contact-pills { justify-content: center; }
+            .section-head { font-size: 1.4rem; }
+            .exp-carousel-card { flex: 0 0 280px; }
+            .skills-panel { padding: 1.5rem; }
+        }
+
+        /* remove any possible emoji-looking icons, only FA remains */
+        .fas, .fab, .far {
+            font-family: "Font Awesome 6 Free";
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio">
+        <div class="portfolio-inner">
+
+            <!-- Header with photo (assets path) & LinkedIn pill added -->
+            <div class="profile-header">
+                <div class="photo-frame">
+                    <img src="assets/images/gallery/daisyprofile.png" alt="Daisy Mensa‑Yawson" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display: none;">
+                        <i class="fas fa-camera"></i>
+                        <span>photo</span>
+                    </div>
+                </div>
+                <div class="name-title">
+                    <h1>Daisy Mensa‑Yawson</h1>
+                    <div class="contact-pills">
+                        <a href="tel:+233202059417" class="pill"><i class="fas fa-phone-alt"></i> +233 20 205 9417</a>
+                        <a href="mailto:daisyyawson1@gmail.com" class="pill"><i class="fas fa-envelope"></i> daisyyawson1@gmail.com</a>
+                        <span class="pill"><i class="fas fa-map-pin"></i> Accra, Ghana</span>
+                        <!-- LinkedIn link (new) with distinct pill -->
+                        <a href="https://www.linkedin.com/in/daisy-mensa-yawson-9a7943244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="pill linkedin-pill"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROFESSIONAL SUMMARY (updated text) -->
+            <div class="section-head">Profile</div>
+            <div class="summary-card">
+                Detail‑oriented Administrative & IT Support professional with a background in Information Technology Management and hands‑on experience supporting office operations, digital systems, and online engagement. Skilled in coordinating communications, maintaining accurate records, supporting users, and transforming operational data into actionable insights using Excel and Power BI dashboards. Adept at improving workflow efficiency, managing digital platforms, and assisting teams in fast‑paced environments.
+            </div>
+
+            <!-- CORE COMPETENCIES (tag cloud) -->
+            <div class="section-head">Core competencies</div>
+            <div class="tag-list">
+                <span class="tag">Administrative & Office Support</span>
+                <span class="tag">IT Helpdesk & User Support</span>
+                <span class="tag">Business Intelligence (Excel & Power BI)</span>
+                <span class="tag">Social Media & Digital Engagement</span>
+                <span class="tag">Data Entry & Records Management</span>
+                <span class="tag">Documentation & Process Coordination</span>
+                <span class="tag">Email & Stakeholder Communication</span>
+                <span class="tag">Troubleshooting & System Setup</span>
+            </div>
+
+            <!-- Floating WhatsApp Button -->
+<a href="https://wa.me/233202059417?text=Hello%20I%20want%20to%20make%20an%20enquiry"
+   class="wa-btn"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+<svg viewBox="0 0 32 32" width="30" height="30">
+  <path fill="white" d="M19.11 17.44c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.14-.17.19-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.46-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.87-2.11-.23-.55-.46-.48-.64-.49l-.54-.01c-.19 0-.51.07-.77.36-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.17 3 .14.19 2.01 3.07 4.87 4.3.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.71-.7 1.95-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/>
+  <path fill="white" d="M26.67 5.33A13.86 13.86 0 0016 1C8.28 1 2 7.28 2 15c0 2.62.73 5.07 2 7.17L2 31l8.99-1.96A13.93 13.93 0 0016 29c7.72 0 14-6.28 14-14 0-3.73-1.45-7.23-4.33-9.67zM16 26.5c-2.24 0-4.33-.6-6.13-1.65l-.44-.26-5.34 1.16 1.14-5.21-.29-.45A11.47 11.47 0 014.5 15C4.5 8.65 9.65 3.5 16 3.5S27.5 8.65 27.5 15 22.35 26.5 16 26.5z"/>
+</svg>
+
+</a>
+
+<style>
+.wa-btn{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  z-index:9999;
+  transition: all .25s ease;
+  text-decoration:none;
+}
+
+.wa-btn:hover{
+  transform: scale(1.12);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+}
+
+.wa-btn:active{
+  transform: scale(.95);
+}
+</style>
+
+            <!-- EDUCATION & CERTIFICATIONS -->
+            <div class="section-head">Education & certifications</div>
+            <div class="edu-grid">
+                <div class="edu-item">
+                    <strong>BSc Information Technology Management</strong>
+                    <div class="edu-detail">University of Professional Studies, Accra · 2022</div>
+                    <span class="edu-badge">Second Class Upper</span>
+                </div>
+                <div class="edu-item">
+                    <strong>Data Analytics certification</strong>
+                    <div class="edu-detail">OpenLabs Ghana (NIIT) · 2023</div>
+                </div>
+                <div class="edu-item">
+                    <strong>Senior Secondary Certificate</strong>
+                    <div class="edu-detail">Okuapemman SHS · 2018</div>
+                </div>
+            </div>
+
+            <!-- PROFESSIONAL EXPERIENCE – carousel / horizontal cards (sleek) -->
+            <div class="section-head">Professional experience</div>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Admin Assistant -->
+                    <div class="exp-carousel-card">
+                        <div class="exp-role">Administrative Assistant</div>
+                        <div class="exp-org">Marriage Link Consult, Accra</div>
+                        <span class="exp-date">Apr 2024 – 2025</span>
+                        <ul class="exp-bullet">
+                            <li><i class="fas fa-circle"></i> Maintained call‑log & client records (Excel).</li>
+                            <li><i class="fas fa-circle"></i> Managed email correspondence & partners.</li>
+                            <li><i class="fas fa-circle"></i> Supported documentation, scheduling, coordination.</li>
+                            <li><i class="fas fa-circle"></i> Digital engagement & online visibility.</li>
+                            <li><i class="fas fa-circle"></i> Generated operational reports for management.</li>
+                        </ul>
+                    </div>
+                    <!-- IT Support Intern -->
+                    <div class="exp-carousel-card">
+                        <div class="exp-role">IT Support Intern</div>
+                        <div class="exp-org">Fridoug Limited, Accra</div>
+                        <span class="exp-date">Sep 2021 – Oct 2021</span>
+                        <ul class="exp-bullet">
+                            <li><i class="fas fa-circle"></i> First‑line hardware & software support.</li>
+                            <li><i class="fas fa-circle"></i> Configured computers, printers, peripherals.</li>
+                            <li><i class="fas fa-circle"></i> User setup & troubleshooting.</li>
+                            <li><i class="fas fa-circle"></i> Tracked service requests & improvements.</li>
+                        </ul>
+                    </div>
+                    <!-- Voter Registration Clerk (National Service) -->
+                    <div class="exp-carousel-card">
+                        <div class="exp-role">Voter Registration Clerk</div>
+                        <div class="exp-org">Electoral Commission of Ghana (National Service)</div>
+                        <span class="exp-date">Nov 2022 – 2023</span>
+                        <ul class="exp-bullet">
+                            <li><i class="fas fa-circle"></i> Accurate data entry & verification (MS Office).</li>
+                            <li><i class="fas fa-circle"></i> Biometric equipment setup & troubleshooting.</li>
+                            <li><i class="fas fa-circle"></i> Daily reports & administrative coordination.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- decorative carousel hint -->
+                <div class="carousel-hint">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <!-- TECHNICAL SKILLS (refined) -->
+            <div class="section-head">Technical skills</div>
+            <div class="skills-panel">
+                <div class="skill-row">
+                    <span class="skill-cat">Data & reporting</span>
+                    <div class="skill-items">
+                        <span class="skill-chip">Excel (cleaning, analysis)</span>
+                        <span class="skill-chip">Power BI dashboards</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-cat">Office & IT infrastructure</span>
+                    <div class="skill-items">
+                        <span class="skill-chip">Word, PowerPoint, Outlook</span>
+                        <span class="skill-chip">Basic networking</span>
+                        <span class="skill-chip">Hardware/peripheral setup</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-cat">Digital & social</span>
+                    <div class="skill-items">
+                        <span class="skill-chip">Social media management</span>
+                        <span class="skill-chip">Engagement monitoring</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEADERSHIP EXPERIENCE -->
+            <div class="section-head">Leadership</div>
+            <div class="lead-card">
+                <div class="lead-title">Women’s Commissioner</div>
+                <div style="color:#2a628c; margin: 0.3rem 0 0.8rem;">NASPA, Ablekuma North District · 2023</div>
+                <ul class="exp-bullet">
+                    <li><i class="fas fa-circle"></i> Represented district at national programs & community engagement.</li>
+                    <li><i class="fas fa-circle"></i> Advocated for women‑focused initiatives & awareness.</li>
+                    <li><i class="fas fa-circle"></i> Collaborated with leaders on workplace/educational challenges.</li>
+                </ul>
+            </div>
+
+            <!-- ADDITIONAL ATTRIBUTES -->
+            <div class="section-head">Attributes</div>
+            <div class="attr-wrap">
+                <span class="attr-item">Strong attention to detail</span>
+                <span class="attr-item">Excellent communication skills</span>
+                <span class="attr-item">Organizational & multitasking</span>
+                <span class="attr-item">Reliability & professionalism</span>
+                <span class="attr-item">Adaptability & quick learning</span>
+            </div>
+
+            <!-- footer with LinkedIn repeated for completeness -->
+            <footer>
+                <span class="footer-item"><i class="fas fa-map-pin"></i> Accra, Ghana</span>
+                <span class="footer-item"><i class="fas fa-phone-alt"></i> +233 20 205 9417</span>
+                <span class="footer-item"><i class="fas fa-envelope"></i> daisyyawson1@gmail.com</span>
+                <a href="https://www.linkedin.com/in/daisy-mensa-yawson-9a7943244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" style="text-decoration: none; color: inherit;" class="footer-item"><i class="fab fa-linkedin"></i> linkedin.com/in/daisy-mensa-yawson</a>
+            </footer>
+        </div> <!-- portfolio-inner -->
+    </div> <!-- portfolio -->
+</body>
+</html>
