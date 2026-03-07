@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Munta Kwabena Obeng · product builder · BSc IT</title>
+  <title>Munta Kwabena Obeng · 10+ yrs builder · BSc IT</title>
   <meta name="description" content="Portfolio – Munta Kwabena Obeng: software dev, PM, AI engineer, entrepreneur. BSc Information Technology, University of Ghana." />
   <style>
-    /* ----- RESET & FRESH TOKENS (no underlines, no WhatsApp) ----- */
-    *{margin:0; padding:0; box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
       background: var(--bg);
       color: var(--text);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -17,215 +16,271 @@
       overflow-x: hidden;
       transition: background 0.2s ease, color 0.2s ease;
     }
-    :root{
-      /* sophisticated palette — deep teal + cream */
-      --bg: #f8f5f0;           /* soft cream background */
-      --surface: #ffffffcc;
-      --surface-solid: #ffffff;
-      --text: #1a282d;          /* deep teal-black */
-      --text-muted: #2f3e46cc;
-      --text-muted-2: #2f3e4699;
-      --accent-main: #0f4b5a;   /* deep teal */
-      --accent-secondary: #b68b6e; /* warm leather */
-      --accent-soft: #d4c3b3;   /* taupe */
-      --border-light: #2f3e461a;
-      --border-med: #2f3e4633;
-      --shadow-sm: 0 8px 20px -8px rgba(15,75,90,0.08);
-      --shadow-md: 0 16px 40px -16px rgba(15,75,90,0.16);
-      --btn-text: #f8f5f0;
-      --max-width: 1200px;
-      --radius-card: 24px;
-      --radius-pill: 60px;
+    :root {
+      --bg: #f8f5f0;           --surface: #ffffffcc;   --surface-solid: #ffffff;
+      --text: #1a282d;         --text-muted: #2f3e46cc; --text-muted-2: #2f3e4699;
+      --accent-main: #0f4b5a;  --accent-secondary: #b68b6e; --accent-soft: #d4c3b3;
+      --border-light: #2f3e461a;--border-med: #2f3e4633; --shadow-sm: 0 8px 20px -8px rgba(15,75,90,0.08);
+      --shadow-md: 0 16px 40px -16px rgba(15,75,90,0.16); --btn-text: #f8f5f0;
+      --max-width: 1200px;     --radius-card: 24px;    --radius-pill: 60px;
     }
-    [data-theme="dark"]{
-      --bg: #132026;            /* rich dark teal */
-      --surface: #1f2e33cc;
-      --surface-solid: #1f2e33;
-      --text: #efede7;
-      --text-muted: #cbd5cfcc;
-      --text-muted-2: #a8b9b1;
-      --accent-main: #70a9a1;   /* lighter teal */
-      --accent-secondary: #d8b89a;
-      --accent-soft: #5d6f6b;
-      --border-light: #efede71a;
-      --border-med: #efede733;
-      --shadow-sm: 0 8px 24px -8px #030a0e;
-      --shadow-md: 0 20px 44px -16px #030a0e;
-      --btn-text: #132026;
+    [data-theme="dark"] {
+      --bg: #132026;           --surface: #1f2e33cc;   --surface-solid: #1f2e33;
+      --text: #efede7;         --text-muted: #cbd5cfcc;--text-muted-2: #a8b9b1;
+      --accent-main: #70a9a1;  --accent-secondary: #d8b89a; --accent-soft: #5d6f6b;
+      --border-light: #efede71a;--border-med: #efede733;--shadow-sm: 0 8px 24px -8px #030a0e;
+      --shadow-md: 0 20px 44px -16px #030a0e;          --btn-text: #132026;
     }
 
-    /* remove all underlines globally */
-    a{text-decoration: none; color: inherit;}
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(92%, var(--max-width)); margin: 0 auto; }
+    .section { padding: 80px 0; }
 
-    .container{width:min(92%, var(--max-width)); margin:0 auto;}
-    .section{padding: 80px 0;}
+    h1, h2, h3 { font-weight: 650; letter-spacing: -0.01em; line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); }
+    h2 { font-size: 2.4rem; margin-bottom: 0.25rem; }
+    h3 { font-size: 1.6rem; }
+    p { color: var(--text-muted); margin-bottom: 1rem; }
+    .small { font-size: 0.95rem; }
+    .muted { color: var(--text-muted-2); }
+    .accent { color: var(--accent-main); font-weight: 550; }
 
-    /* ----- TYPOGRAPHY (clean, no underlines) ----- */
-    h1, h2, h3{font-weight: 650; letter-spacing: -0.01em; line-height: 1.2;}
-    h1{font-size: clamp(2.2rem,6vw,3.4rem);}
-    h2{font-size: 2.4rem; margin-bottom: 0.25rem;}
-    h3{font-size: 1.6rem;}
-    p{color: var(--text-muted); margin-bottom: 1rem;}
-    .small{font-size: 0.95rem;}
-    .muted{color: var(--text-muted-2);}
-    .accent{color: var(--accent-main); font-weight: 550;}
-
-    /* ----- BACKGROUND (soft) ----- */
-    .bg{
-      position:fixed; inset:0; z-index:-2;
-      background: var(--bg);
-    }
-    .bg::after{
-      content:''; position:absolute; inset:0;
-      background: radial-gradient(800px at 20% 20%, var(--accent-soft) 0%, transparent 60%),
-                  radial-gradient(700px at 90% 70%, var(--accent-secondary) 0%, transparent 70%);
+    .bg { position: fixed; inset: 0; z-index: -2; background: var(--bg); }
+    .bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(800px at 20% 20%, var(--accent-soft) 0%, transparent 60%),
+        radial-gradient(700px at 90% 70%, var(--accent-secondary) 0%, transparent 70%);
       opacity: 0.18;
       pointer-events: none;
     }
-    .noise{
-      position:absolute; inset:0; opacity:0.02;
-      background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.3"/></svg>');
+    .noise {
+      position: absolute;
+      inset: 0;
+      opacity: 0.02;
+      background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%%" height="100%%" filter="url(%23noise)" opacity="0.3"/></svg>');
       pointer-events: none;
       mix-blend-mode: multiply;
     }
-    [data-theme="dark"] .bg::after{opacity: 0.12;}
+    [data-theme="dark"] .bg::after { opacity: 0.12; }
 
-    /* ----- HEADER + NAV (no underlines) ----- */
-    .header{
-      position: sticky; top: 0; z-index: 50;
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
       padding: 12px 0;
       backdrop-filter: blur(10px);
       background: color-mix(in srgb, var(--bg) 70%, transparent);
       border-bottom: 1px solid var(--border-light);
     }
-    .nav{
-      display: flex; align-items: center; justify-content: space-between;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background: var(--surface);
       border: 1px solid var(--border-med);
       border-radius: var(--radius-pill);
       padding: 0.4rem 0.4rem 0.4rem 1.2rem;
       box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .brand{display: flex; align-items: center; gap: 0.7rem; font-weight: 650;}
-    .brand-badge{
-      width: 36px; height: 36px; border-radius: 14px;
+    .nav:hover { box-shadow: var(--shadow-md); }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 650;
+      min-width: 0;
+    }
+    .brand-logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 12px;
+      flex-shrink: 0;
+      background: var(--surface-solid);
+      padding: 4px;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; }
+    .nav-links a {
+      padding: 0.6rem 1rem;
+      border-radius: 40px;
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: 0.15s;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--accent-soft);
+      color: var(--text);
+      border-color: var(--border-med);
+    }
+    .nav-links .btn-small {
       background: var(--accent-main);
-      box-shadow: 0 0 0 2px var(--accent-secondary);
+      color: var(--btn-text);
+      margin-left: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      box-shadow: none;
     }
-    .nav-links{display: flex; align-items: center; gap: 0.2rem;}
-    .nav-links a{
-      padding: 0.6rem 1rem; border-radius: 40px; color: var(--text-muted);
-      font-weight: 500; transition: 0.15s; border: 1px solid transparent;
+    .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 40px;
+      border: 1px solid var(--border-med);
+      background: var(--surface);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
     }
-    .nav-links a:hover, .nav-links a.active{
-      background: var(--accent-soft); color: var(--text); border-color: var(--border-med);
-    }
-    .nav-links .btn-small{
-      background: var(--accent-main); color: var(--btn-text); margin-left: 0.5rem;
-      padding: 0.5rem 1.2rem; border: none; box-shadow: none;
-    }
-    .nav-right{display: flex; align-items: center; gap: 0.5rem;}
-    .icon-btn{
-      width: 44px; height: 44px; border-radius: 40px; border: 1px solid var(--border-med);
-      background: var(--surface); cursor: pointer; display: grid; place-items: center;
-    }
-    .icon{width: 22px; height: 22px; fill: var(--text);}
-    .nav-toggle{display: none; flex-direction: column; gap: 5px; background: none; border: none;}
-    .nav-toggle span{width: 22px; height: 2px; background: var(--text); border-radius: 4px;}
+    .icon { width: 22px; height: 22px; fill: var(--text); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; }
+    .nav-toggle span { width: 22px; height: 2px; background: var(--text); border-radius: 4px; }
 
-    /* ----- BUTTONS / PILLS (no underline) ----- */
-    .btn{
-      display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1.5rem;
-      border-radius: 60px; background: var(--accent-main); color: var(--btn-text);
-      font-weight: 600; border: 1px solid transparent; white-space: nowrap;
-      box-shadow: var(--shadow-sm); transition: 0.15s;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 60px;
+      background: var(--accent-main);
+      color: var(--btn-text);
+      font-weight: 600;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      box-shadow: var(--shadow-sm);
+      transition: 0.15s;
     }
-    .btn-ghost{
-      background: transparent; color: var(--text); border: 1px solid var(--border-med);
-      box-shadow: none; backdrop-filter: blur(4px);
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border-med);
+      box-shadow: none;
+      backdrop-filter: blur(4px);
     }
-    .btn-ghost:hover{background: var(--surface);}
-    .btn-small{padding: 0.5rem 1.2rem; font-size: 0.9rem;}
+    .btn-ghost:hover { background: var(--surface); }
+    .btn-small { padding: 0.5rem 1.2rem; font-size: 0.9rem; }
 
-    .pill{
-      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem;
-      border-radius: 60px; border: 1px solid var(--border-med); background: var(--surface);
-      color: var(--text-muted); font-size: 0.95rem;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      border: 1px solid var(--border-med);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
-    .dot{
-      width: 10px; height: 10px; border-radius: 50%; background: var(--accent-main);
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-main);
       box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-main) 16%, transparent);
     }
 
-    /* ----- HERO GRID ----- */
-    .hero{
-      display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 2rem; align-items: center;
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
     }
-    .lead{font-size: 1.2rem; margin-bottom: 2rem;}
-    .hero-actions{display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0;}
-    .hero-stats{display: flex; flex-wrap: wrap; gap: 1rem;}
-    .stat{
-      flex: 1 1 140px; background: var(--surface); border: 1px solid var(--border-med);
-      border-radius: 20px; padding: 1.2rem 1rem; box-shadow: var(--shadow-sm);
+    .lead { font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .stat {
+      flex: 1 1 140px;
+      background: var(--surface);
+      border: 1px solid var(--border-med);
+      border-radius: 20px;
+      padding: 1.2rem 1rem;
+      box-shadow: var(--shadow-sm);
     }
-    .stat-number{font-size: 1.5rem; font-weight: 750; color: var(--accent-main);}
-    .stat-label{color: var(--text-muted-2); font-size: 0.9rem;}
+    .stat-number { font-size: 1.5rem; font-weight: 750; color: var(--accent-main); }
+    .stat-label { color: var(--text-muted-2); font-size: 0.9rem; }
 
-    .hero-card .card{
-      background: var(--surface-solid); border: 1px solid var(--border-med);
-      border-radius: 28px; padding: 1.8rem; box-shadow: var(--shadow-md);
+    .hero-card .card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border-med);
+      border-radius: 28px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-md);
       backdrop-filter: blur(2px);
     }
-    .card-top{display: flex; gap: 1.2rem; margin-bottom: 1.5rem; align-items: center;}
-    .avatar{
-      width: 64px; height: 64px; border-radius: 20px;
-      background: linear-gradient(145deg, var(--accent-main), var(--accent-secondary));
-      border: 2px solid var(--accent-soft);
+    .card-top {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
     }
-    .card-name{font-size: 1.4rem; font-weight: 700;}
-    .card-role{color: var(--text-muted-2);}
-    .chips{display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;}
-    .chip{
-      padding: 0.5rem 1rem; border-radius: 60px; background: var(--surface);
-      border: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem;
+    .avatar-logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 16px;
+      border: 2px solid var(--accent-soft);
+      background: var(--surface-solid);
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .card-name { font-size: 1.4rem; font-weight: 700; }
+    .card-role { color: var(--text-muted-2); }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+    .chip {
+      padding: 0.5rem 1rem;
+      border-radius: 60px;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
 
-    /* ----- PHOTO PANEL — image fills container (no crop) ----- */
-    .about-grid{
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; align-items: stretch;
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; align-items: stretch; }
+    .photo-panel {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border-med);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
     }
-    .photo-panel{
-      border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--border-med);
-      background: var(--surface); box-shadow: var(--shadow-sm);
-      display: flex; flex-direction: column;
+    .photo-panel .ph {
+      flex: 1;
+      min-height: 600px;
+      width: 100%;
+      background: var(--accent-soft);
+      position: relative;
     }
-    .photo-panel .ph{
-      flex: 1; min-height: 340px; width: 100%; background: var(--accent-soft);
-      position: relative;  /* container for img */
-      display: flex; align-items: center; justify-content: center;
-    }
-    .photo-panel .ph img{
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;    /* fills container, no distortion, no crop unless aspect ratio forces, but this ensures full coverage */
+    .photo-panel .ph img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
-    .photo-panel .hint{
-      padding: 1rem; border-top: 1px solid var(--border-light); color: var(--text-muted-2);
-      font-size: 0.85rem; background: var(--surface);
-    }
 
-    /* ----- PROJECT CARDS — lucrative, bold, elevated ----- */
-    .panel{
-      background: var(--surface); border: 1px solid var(--border-med); border-radius: 24px;
-      padding: 1.8rem; box-shadow: var(--shadow-sm); backdrop-filter: blur(2px);
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border-med);
+      border-radius: 24px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(2px);
     }
-    .grid-2{display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;}
-    .cards{
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem;
-    }
-    /* lucrative project card style */
-    .project{
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
+    .project {
       background: var(--surface-solid);
       border: 1px solid var(--border-med);
       border-radius: 26px;
@@ -234,14 +289,14 @@
       transition: all 0.2s ease;
       display: flex;
       flex-direction: column;
-      border-bottom: 4px solid var(--accent-secondary);  /* accent pop */
+      border-bottom: 4px solid var(--accent-secondary);
     }
-    .project:hover{
+    .project:hover {
       transform: translateY(-6px);
       box-shadow: 0 24px 48px -16px var(--accent-main);
       border-bottom-color: var(--accent-main);
     }
-    .project h3{
+    .project h3 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       background: linear-gradient(145deg, var(--accent-main), var(--accent-secondary));
@@ -249,22 +304,25 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .project p{
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
+    .project p { font-size: 0.95rem; margin-bottom: 1.2rem; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0 1.2rem 0; }
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border-med);
+      color: var(--accent-main);
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
-    .meta-row{display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0 1.2rem 0;}
-    .tag{
-      font-size: 0.75rem; padding: 0.3rem 0.9rem; border-radius: 40px; background: var(--surface);
-      border: 1px solid var(--border-med); color: var(--accent-main); font-weight: 650;
-      text-transform: uppercase; letter-spacing: 0.3px;
-    }
-    .project a.view{
+    .project a.view {
       color: var(--accent-main);
       font-weight: 700;
       margin-top: auto;
       align-self: flex-start;
-      border-bottom: 2px solid transparent;  /* no underline, just color */
+      border-bottom: 2px solid transparent;
       transition: 0.1s;
       font-size: 1rem;
       background: var(--accent-soft);
@@ -272,64 +330,236 @@
       border-radius: 40px;
       border: 1px solid var(--border-med);
     }
-    .project a.view:hover{
-      background: var(--accent-main);
-      color: var(--btn-text);
+    .project a.view:hover { background: var(--accent-main); color: var(--btn-text); }
+
+    .book-grid,
+    .podcast-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.8rem;
+      align-items: stretch;
     }
 
-    /* book grid */
-    .book-grid{
-      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1.8rem; align-items: stretch;
+    .book-cover,
+    .podcast-cover {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border-med);
+      background: var(--accent-soft);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
-    .book-cover{
-      border-radius: 24px; overflow: hidden; border: 1px solid var(--border-med);
-      background: var(--accent-soft); display: flex; flex-direction: column;
-    }
-    .cover-ph{
-      flex: 1; min-height: 260px; background: var(--accent-soft); display: flex;
-      align-items: center; justify-content: center; color: var(--text-muted-2);
-    }
-    .pricebar{
-      padding: 1rem; border-top: 1px solid var(--border-med); background: var(--surface);
-      display: flex; justify-content: space-between; align-items: center;
+    .book-cover:hover,
+    .podcast-cover:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
-    /* reveal animation */
-    .reveal{opacity: 0; transform: translateY(16px); transition: 0.7s ease;}
-    .reveal.show{opacity: 1; transform: translateY(0);}
-
-    /* mobile */
-    @media (max-width: 860px){
-      .hero{grid-template-columns: 1fr;}
-      .cards{grid-template-columns: 1fr 1fr;}
-      .about-grid, .book-grid, .grid-2{grid-template-columns: 1fr;}
+    .cover-ph,
+    .podcast-ph {
+      flex: 1;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      overflow: hidden;
+      position: relative;
     }
-    @media (max-width: 640px){
-      .cards{grid-template-columns: 1fr;}
-      .nav-toggle{display: flex;}
-      .nav-links{
-        display: none; position: absolute; top: 75px; right: 4%; width: 240px;
-        background: var(--surface-solid); border: 1px solid var(--border-med);
-        border-radius: 24px; padding: 1rem; flex-direction: column; gap: 0.2rem;
-        box-shadow: var(--shadow-md); backdrop-filter: blur(12px);
+    .cover-ph { min-height: 600px; }
+    .podcast-ph { min-height: 600px; }
+
+    .cover-ph::after,
+    .podcast-ph::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.08) 35%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    .cover-ph img,
+    .podcast-ph img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .podcast-ph img { transition: transform 0.5s ease; }
+    .podcast-cover:hover .podcast-ph img { transform: scale(1.04); }
+
+    .pricebar,
+    .linkbar {
+      padding: 1rem;
+      border-top: 1px solid var(--border-med);
+      background: var(--surface);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .book-cta-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .book-slider {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      animation: bookSlide 16s infinite ease-in-out;
+      will-change: transform;
+    }
+    .book-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: transform 0.6s ease;
+    }
+
+    @keyframes bookSlide {
+      0%, 20% { transform: translateX(0); }
+      25%, 45% { transform: translateX(-100%); }
+      50%, 70% { transform: translateX(-200%); }
+      75%, 95% { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
+    }
+
+    .consult-card { background: linear-gradient(145deg, var(--accent-main), #1d5e6b); color: white; border: none; }
+    .consult-card h3, .consult-card p { color: white; }
+    .consult-card input, .consult-card select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 1rem;
+    }
+    .consult-card option { background: var(--accent-main); }
+    .consult-card .btn { background: white; color: var(--accent-main); border: none; width: 100%; }
+    .consult-card .btn:hover { background: var(--accent-soft); }
+
+    .pill,
+    .btn,
+    .btn-small,
+    .icon-btn,
+    .panel,
+    .stat,
+    .project,
+    .nav,
+    .brand-logo,
+    .avatar-logo,
+    .book-cover,
+    .podcast-cover {
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .btn:hover,
+    .btn-small:hover,
+    .icon-btn:hover { transform: translateY(-2px); }
+
+    .stat:hover,
+    .panel:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .brand-logo:hover,
+    .avatar-logo:hover { transform: scale(1.04); }
+
+    .hero-content .pill { animation: floatSoft 4.5s ease-in-out infinite; }
+    .hero-card .card { animation: floatCard 6s ease-in-out infinite; }
+
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.7s cubic-bezier(0.2,0.9,0.3,1),
+        transform 0.7s cubic-bezier(0.2,0.9,0.3,1);
+    }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .about-grid, .book-grid, .podcast-grid, .grid-2 { grid-template-columns: 1fr; }
+      .cover-ph, .podcast-ph, .photo-panel .ph { min-height: 420px; }
+    }
+
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 4%;
+        width: 240px;
+        background: var(--surface-solid);
+        border: 1px solid var(--border-med);
+        border-radius: 24px;
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.2rem;
+        box-shadow: var(--shadow-md);
+        backdrop-filter: blur(12px);
       }
-      .nav-links.open{display: flex;}
+      .nav-links.open { display: flex; }
+      .brand span { font-size: 0.95rem; }
+      .brand-logo { width: 48px; height: 48px; }
+      .avatar-logo { width: 56px; height: 56px; }
     }
   </style>
 </head>
 <body>
-  <!-- background (no WA button anywhere) -->
-  <div class="bg" aria-hidden="true"><div class="noise"></div></div>
+  <div class="bg"><div class="noise"></div></div>
 
-  <!-- header -->
   <header class="header">
     <nav class="nav container">
-      <a class="brand" href="#top"><span class="brand-badge"></span><span>M.K.Obeng · BSc IT</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="menu"><span></span><span></span><span></span></button>
+      <a class="brand" href="#top">
+        <img src="assets/images/banners/muntalogo.png" class="brand-logo" alt="Munta logo">
+        <span>Munta Kwabena Obeng</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+
       <div class="nav-links" id="navLinks">
-        <a href="#about">About</a><a href="#author">Author</a><a href="#ventures">Ventures</a><a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#consultation">Consultation</a>
+        <a href="#author">Author</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#projects">Projects</a>
         <a href="#contact" class="btn-small">Contact</a>
       </div>
+
       <div class="nav-right">
         <button class="icon-btn" id="themeToggle">
           <svg class="icon" id="themeIcon" viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM12 4a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.07 7.07a1 1 0 0 1-1.41 0l-.7-.7a1 1 0 0 1 1.41-1.41l.7.7a1 1 0 0 1 0 1.41ZM7.05 7.05a1 1 0 0 1-1.41 0l-.7-.7A1 1 0 0 1 6.35 4.94l.7.7a1 1 0 0 1 0 1.41Zm11.02-2.11a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0ZM6.35 19.06a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0Z"/></svg>
@@ -339,64 +569,205 @@
   </header>
 
   <main>
-    <!-- hero -->
     <section class="container section hero">
       <div class="hero-content">
         <p class="pill reveal"><span class="dot"></span> Ghana · global · delivery</p>
-        <h1 class="reveal"><span class="accent">Munta Kwabena Obeng</span> — Project Manager,Software dev, AI engineer(IBM) & BSc IT (Univ. of Ghana).</h1>
-        <p class="lead reveal">I build products that make money and scale — remittance, logistics, AI bots, SaaS. Strong execution & digitisation.</p>
+        <h1 class="reveal">Hi I'm <span class="accent">Munta Kwabena Obeng</span> — 10+ years building products, Project Manager, Software Developer & AI engineer</h1>
+        <p class="lead reveal">I build products that make money and scale — remittance, logistics, AI bots, SaaS. Strong execution & digitisation across Africa, US, Europe.</p>
         <div class="hero-actions reveal">
           <a class="btn" href="#projects">See Projects</a>
           <a class="btn btn-ghost" href="https://linkedin.com/in/munta-kwabena-obeng-982511179/" target="_blank">LinkedIn</a>
           <a class="btn btn-ghost" href="#contact">Let's Talk</a>
         </div>
         <div class="hero-stats reveal">
-          <div class="stat"><span class="stat-number">$450k+</span><div class="stat-label">revenue impact</div></div>
-          <div class="stat"><span class="stat-number">20+</span><div class="stat-label">platforms shipped</div></div>
-          <div class="stat"><span class="stat-number">co-founder</span><div class="stat-label">multiple ventures</div></div>
+          <div class="stat"><span class="stat-number">$1.2M+</span><div class="stat-label">revenue enabled</div></div>
+          <div class="stat"><span class="stat-number">26+</span><div class="stat-label">brands worldwide</div></div>
+          <div class="stat"><span class="stat-number">10+ yrs</span><div class="stat-label">local & intl</div></div>
         </div>
       </div>
+
       <aside class="hero-card reveal">
         <div class="card">
-          <div class="card-top"><div class="avatar"></div><div><div class="card-name">Munta K. Obeng</div><div class="card-role">builder · PM · AI · BSc IT</div></div></div>
-          <p>Product thinking + engineering + project delivery to ship fast, clean systems.</p>
-          <div class="chips"><span class="chip">Product Strategy</span><span class="chip">Web Systems</span><span class="chip">Bots</span><span class="chip">Payments</span><span class="chip">SaaS</span><span class="chip">Mobile Apps</span></div>
+          <div class="card-top">
+            <img src="assets/images/banners/muntalogo.png" class="avatar-logo" alt="Munta logo">
+            <div>
+              <div class="card-name">Munta K. Obeng</div>
+              <div class="card-role">builder · PM · AI · 10+ yrs</div>
+            </div>
+          </div>
+          <p>Product strategy + engineering + project delivery. Over a decade of shipping FinTech, logistics, real estate, and AI solutions.</p>
+          <div class="chips">
+            <span class="chip">Product Strategy</span>
+            <span class="chip">Web Systems</span>
+            <span class="chip">Bots</span>
+            <span class="chip">Payments</span>
+            <span class="chip">SaaS</span>
+            <span class="chip">Mobile Apps</span>
+          </div>
           <div class="card-actions"><a class="btn-small btn" href="mailto:kwabenaobengmunta@gmail.com">Email</a></div>
         </div>
       </aside>
     </section>
 
-    <!-- about – photo fills container (no crop) -->
     <section id="about" class="container section">
-      <div class="section-head reveal"><h2>About</h2><p class="muted">ideas → execution → products</p></div>
+      <div class="section-head reveal"><h2>About</h2><p class="muted">ideas → execution → global impact</p></div>
       <div class="about-grid">
         <div class="photo-panel reveal">
           <div class="ph">
-            <!-- REPLACE WITH YOUR ACTUAL IMAGE PATH — image fills container completely (object-fit: cover) -->
             <img src="assets/images/banners/moontashunta.png" alt="Munta Kwabena Obeng portrait">
           </div>
-          <div class="hint"></div>
         </div>
         <div class="panel reveal" style="display:flex; flex-direction:column; justify-content:center;">
-          <h3>BSc Information Technology · University of Ghana</h3>
-          <p>I’m a builder blending software engineering, project leadership, and AI automation to create systems people actually use. FinTech, logistics, real estate, tourism, media — focus on adoption & revenue.</p>
-          <p class="small muted">If you need someone who can take an idea, architect, build, and ship — that’s my lane.</p>
+          <p><strong>I'm a creative product builder with over 10 years of experience</strong> spanning software engineering, project leadership, and AI automation. I've delivered platforms for clients and companies across Ghana, the US, Europe, and Asia — from remittance systems (Pinda Transfer) to ride-hailing in Minnesota (RideMe), logistics tracking, and AI property bots.</p>
+          <p>My work lives at the intersection of business and technology: I don't just write code, I architect systems that drive adoption, revenue, and scale. Whether it's a FinTech backend, a mobile app for trucking schools, or a podcast that demystifies tech for thousands, I bring a creative, execution-focused mindset.</p>
+          <p class="small muted"><span class="accent">BSc Information Technology, University of Ghana</span> · IBM AI Engineering · 26+ brands trust my work · Local roots, global reach.</p>
         </div>
       </div>
     </section>
 
-    <!-- author + book -->
-    <section id="author" class="container section">
-      <div class="section-head reveal"><h2>Author</h2><p class="muted">a book for deep thinkers</p></div>
-      <div class="book-grid">
-        <div class="book-cover reveal"><div class="cover-ph">[cover · Opaque]</div><div class="pricebar"><span>Price <b>$5</b></span><a class="btn-small btn" href="https://ikwabenaobeng6.gumroad.com/l/gxzjs" target="_blank">Buy →</a></div></div>
-        <div class="panel reveal"><h3>Opaque: A Journey Through Life’s Mysteries</h3><p class="small muted">By Munta Kwabena Obeng</p><p>A personal exploration of meaning, death, progress, and what lies beyond. Honest essays inviting curiosity.</p><p>Bonus: QR code inside to share reflections.</p><a class="btn" href="https://ikwabenaobeng6.gumroad.com/l/gxzjs" target="_blank">Buy Opaque ($5) →</a></div>
+    <section id="consultation" class="container section">
+      <div class="section-head reveal"><h2>Book a consultation</h2><p class="muted">Limited offer – get expert product / tech strategy session</p></div>
+      <div class="grid-2">
+        <div class="panel consult-card reveal">
+          <h3>Schedule your session</h3>
+          <p>Fill in your details and we'll confirm via WhatsApp within 24 hours.</p>
+          <form id="consultForm" onsubmit="event.preventDefault(); bookConsult();">
+            <input type="text" id="consultName" placeholder="Your name" required>
+            <input type="email" id="consultEmail" placeholder="Email address" required>
+            <input type="tel" id="consultPhone" placeholder="WhatsApp number (with country code)" required>
+            <select id="consultTopic" required>
+              <option value="" disabled selected>Select topic</option>
+              <option>Product strategy & roadmap</option>
+              <option>AI / automation for your business</option>
+              <option>FinTech / payments architecture</option>
+              <option>Mobile app development</option>
+              <option>General tech advisory</option>
+            </select>
+            <button type="submit" class="btn">Book now via WhatsApp →</button>
+          </form>
+          <p class="small" style="margin-top:0.8rem; color:rgba(255,255,255,0.8);">You'll be redirected to WhatsApp to confirm.</p>
+        </div>
+        <div class="panel reveal" style="background: var(--surface-solid);">
+          <h3>Why a consultation?</h3>
+          <p>Whether you're a founder, startup, or enterprise, get direct access to 10+ years of product building. We'll cover:</p>
+          <ul style="color: var(--text-muted); margin-left: 1.2rem;">
+            <li> Validating your idea / roadmap</li>
+            <li> Choosing the right tech stack</li>
+            <li> Avoiding costly dev mistakes</li>
+            <li> AI integration opportunities</li>
+            <li> Fundraising / pitch preparation</li>
+          </ul>
+          <p class="accent" style="margin-top:1rem;"><strong>Spots limited.</strong></p>
+        </div>
       </div>
     </section>
 
-    <!-- ventures -->
+    <section id="author" class="container section">
+      <div class="section-head reveal">
+        <h2>Author</h2>
+        <p class="muted">Opaque: A Journey Through Life’s Mysteries</p>
+      </div>
+
+      <div class="book-grid">
+        <div class="book-cover reveal">
+          <div class="cover-ph">
+            <div class="book-slider">
+              <img src="assets/images/banners/opmain.jpeg" alt="Opaque visual 1" onerror="this.style.display='none'">
+              <img src="assets/images/banners/op4.jpeg" alt="Opaque visual 2" onerror="this.style.display='none'">
+              <img src="assets/images/banners/op1.jpeg" alt="Opaque visual 3" onerror="this.style.display='none'">
+              <img src="assets/images/banners/op2.jpeg" alt="Opaque visual 4" onerror="this.style.display='none'">
+            </div>
+          </div>
+
+          <div class="pricebar">
+            <span>Price <b>$5</b></span>
+            <div class="book-cta-group">
+              <a class="btn-small btn" href="https://gumroad.com/checkout?_gl=1*njzk53*_ga*MTEzOTg5MzYuMTc3MjcyNTA5MA..*_ga_6LJN6D94N6*czE3NzI4ODA3NTAkbzMkZzEkdDE3NzI4ODA5NTkkajYwJGwwJGgw" target="_blank">
+                Buy →
+              </a>
+              <a class="btn-small btn-ghost" href="https://wa.me/233594045086?text=Hello%20Munta%2C%20I%20want%20to%20pay%20for%20Opaque%20in%20installments." target="_blank">
+                Pay in Installments
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Opaque: A Journey Through Life’s Mysteries</h3>
+          <p class="small muted">By Munta Kwabena Obeng</p>
+          <p>
+            A personal exploration of meaning, death, progress, and what lies beyond.
+            Honest essays inviting curiosity.
+          </p>
+          <p>
+            Bonus: QR code inside to share reflections. Four original images included
+            in the physical edition.
+          </p>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a class="btn" href="https://gumroad.com/checkout?_gl=1*njzk53*_ga*MTEzOTg5MzYuMTc3MjcyNTA5MA..*_ga_6LJN6D94N6*czE3NzI4ODA3NTAkbzMkZzEkdDE3NzI4ODA5NTkkajYwJGwwJGgw" target="_blank">
+              Buy Opaque ($5) →
+            </a>
+            <a class="btn btn-ghost" href="https://wa.me/233594045086?text=Hello%20Munta%2C%20I%20want%20to%20pay%20for%20Opaque%20in%20installments." target="_blank">
+              Pay in Installments
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="podcast" class="container section">
+      <div class="section-head reveal">
+        <h2>Ask The Mentor Tech Podcast</h2>
+        <p class="muted">Founded by Munta — demystifying tech for everyone</p>
+      </div>
+
+      <div class="podcast-grid">
+        <div class="podcast-cover reveal">
+          <div class="podcast-ph">
+            <img src="assets/images/banners/askthe.png" alt="Ask The Mentor podcast cover">
+          </div>
+
+          <div class="linkbar">
+            <a class="btn-small btn" href="https://open.spotify.com/show/yourid" target="_blank">Spotify</a>
+            <a class="btn-small btn-ghost" href="https://chat.whatsapp.com/yourgroup" target="_blank">WhatsApp</a>
+            <a class="btn-small btn-ghost" href="https://youtube.com/@askthementor" target="_blank">YouTube</a>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Where devs, hardware gurus & cybersecurity experts share</h3>
+          <p>
+            I founded <strong>Ask The Mentor</strong> to bridge the gap between tech and non-tech minds. 
+            Each episode, we invite specialists — developers, hardware engineers, cybersecurity analysts — 
+            to break down complex topics in a way anyone can understand.
+          </p>
+          <p>
+            From “how does a CPU work?” to “building secure fintech APIs” and 
+            “career pivots into AI”.
+          </p>
+          <p>
+            <strong>Join 3,000+ listeners</strong> gaining clarity, asking questions, and growing. 
+            The WhatsApp group is where the conversation continues: members suggest topics, 
+            interact with guests, and get mentored.
+          </p>
+
+          <div class="podcast-links" style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a class="pill" href="https://open.spotify.com/show/yourid" target="_blank">
+              <span class="dot"></span> Spotify
+            </a>
+            <a class="pill" href="https://chat.whatsapp.com/yourgroup" target="_blank">
+              <span class="dot" style="background:#25D366;"></span> WhatsApp
+            </a>
+            <a class="pill" href="https://youtube.com/@askthementor" target="_blank">
+              <span class="dot" style="background:#FF0000;"></span> YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="ventures" class="container section">
-      <div class="section-head reveal"><h2>Ventures</h2><p class="muted">co‑founded & active</p></div>
+      <div class="section-head reveal"><h2>Ventures</h2><p class="muted">co-founded & active</p></div>
       <div class="cards">
         <article class="project"><h3>Onukpa — Real Estate Bot</h3><p>AI property discovery + lead automation.</p><div class="meta-row"><span class="tag">Co-founder</span><span class="tag">Bot</span></div><a class="view" href="https://onukpa.com">onukpa.com →</a></article>
         <article class="project"><h3>SendIt Ghana</h3><p>Courier & delivery, real-time tracking.</p><div class="meta-row"><span class="tag">Co-founder</span><span class="tag">Logistics</span></div><a class="view" href="https://senditgh.com">senditgh.com →</a></article>
@@ -407,24 +778,20 @@
       </div>
     </section>
 
-    <!-- PROJECTS — updated with mobile apps & lucrative look -->
     <section id="projects" class="container section">
-      <div class="section-head reveal"><h2>Projects</h2><p class="muted">selected work · including mobile apps</p></div>
+      <div class="section-head reveal"><h2>Projects</h2><p class="muted">selected work · 26+ brands · including mobile apps</p></div>
       <div class="cards">
-        <!-- existing projects + new mobile apps inserted -->
-        <article class="project"><h3>Pinda Transfer</h3><p>Remittance, multi‑currency, settlement.</p><div class="meta-row"><span class="tag">FinTech</span><span class="tag">Payments</span></div><a class="view" href="https://pindatransfer.com">pindatransfer →</a></article>
+        <article class="project"><h3>Pinda Transfer</h3><p>Remittance, multi-currency, settlement.</p><div class="meta-row"><span class="tag">FinTech</span><span class="tag">Payments</span></div><a class="view" href="https://pindatransfer.com">pindatransfer →</a></article>
         <article class="project"><h3>RideMe (Minnesota)</h3><p>Ride-hailing, dispatch, driver workflows.</p><div class="meta-row"><span class="tag">Mobility</span><span class="tag">Platform</span></div><a class="view" href="https://ridemeapp.com">ridemeapp →</a></article>
         <article class="project"><h3>PropLink Ghana</h3><p>Property marketplace, listings, leads.</p><div class="meta-row"><span class="tag">Real Estate</span><span class="tag">Marketplace</span></div><a class="view" href="https://proplinkghana.com">proplinkghana →</a></article>
-        <article class="project"><h3>Buybac Ghana</h3><p>E‑commerce for authentic Ghanaian goods.</p><div class="meta-row"><span class="tag">E‑commerce</span><span class="tag">Payments</span></div><a class="view" href="https://buybacgh.com">buybacgh →</a></article>
-        <article class="project"><h3>Sky Inventories</h3><p>China‑to‑Ghana shipping inventory.</p><div class="meta-row"><span class="tag">Inventory</span><span class="tag">Logistics</span></div><a class="view" href="https://skyinventories.com">skyinventories →</a></article>
+        <article class="project"><h3>Buybac Ghana</h3><p>E-commerce for authentic Ghanaian goods.</p><div class="meta-row"><span class="tag">E-commerce</span><span class="tag">Payments</span></div><a class="view" href="https://buybacgh.com">buybacgh →</a></article>
+        <article class="project"><h3>Sky Inventories</h3><p>China-to-Ghana shipping inventory.</p><div class="meta-row"><span class="tag">Inventory</span><span class="tag">Logistics</span></div><a class="view" href="https://skyinventories.com">skyinventories →</a></article>
         <article class="project"><h3>Skyline Shipping</h3><p>Tracking & booking system.</p><div class="meta-row"><span class="tag">Logistics</span><span class="tag">Tracking</span></div><a class="view" href="https://skylineshippingsolutions.com">skyline →</a></article>
-        <!-- new mobile app projects -->
-        <article class="project"><h3>Sky Inventories Mobile</h3><p>Mobile app for China‑Ghana shipping inventory.</p><div class="meta-row"><span class="tag">Mobile</span><span class="tag">Logistics</span></div><a class="view" href="#">in app stores →</a></article>
+        <article class="project"><h3>Sky Inventories Mobile</h3><p>Mobile app for China-Ghana shipping inventory.</p><div class="meta-row"><span class="tag">Mobile</span><span class="tag">Logistics</span></div><a class="view" href="#">in app stores →</a></article>
         <article class="project"><h3>Skyline Shipping Mobile</h3><p>Mobile booking & tracking for logistics.</p><div class="meta-row"><span class="tag">Mobile</span><span class="tag">Tracking</span></div><a class="view" href="#">in app stores →</a></article>
         <article class="project"><h3>Highway Trucking School</h3><p>Mobile app for trucking school management.</p><div class="meta-row"><span class="tag">Mobile</span><span class="tag">Education</span></div><a class="view" href="#">in app stores →</a></article>
-        <article class="project"><h3>Femon Travel & Tour</h3><p>Check‑in mobile app for tour operators.</p><div class="meta-row"><span class="tag">Mobile</span><span class="tag">Tourism</span></div><a class="view" href="#">in app stores →</a></article>
-        <!-- remaining web projects from list -->
-        <article class="project"><h3>Hog Company</h3><p>E‑commerce platform hogcompany.com</p><div class="meta-row"><span class="tag">E‑commerce</span><span class="tag">Platform</span></div><a class="view" href="https://hogcompany.com">hogcompany →</a></article>
+        <article class="project"><h3>Femon Travel & Tour</h3><p>Check-in mobile app for tour operators.</p><div class="meta-row"><span class="tag">Mobile</span><span class="tag">Tourism</span></div><a class="view" href="#">in app stores →</a></article>
+        <article class="project"><h3>Hog Company</h3><p>E-commerce platform hogcompany.com</p><div class="meta-row"><span class="tag">E-commerce</span><span class="tag">Platform</span></div><a class="view" href="https://hogcompany.com">hogcompany →</a></article>
         <article class="project"><h3>Nagee Golden Eggs</h3><p>Poultry farm, bulk egg supply.</p><div class="meta-row"><span class="tag">Agribusiness</span></div><a class="view" href="https://nageegoldeneggs.com">nagee →</a></article>
         <article class="project"><h3>Kuki Empire Cocktails</h3><p>Mixologist brand, bookings (NY).</p><div class="meta-row"><span class="tag">Lifestyle</span></div><a class="view" href="https://kukiempirecocktails.com">kuki →</a></article>
         <article class="project"><h3>Konko Band</h3><p>Band website, media, events.</p><div class="meta-row"><span class="tag">Music</span></div><a class="view" href="https://konkoband.com">konkoband →</a></article>
@@ -435,41 +802,117 @@
       </div>
     </section>
 
-    <!-- contact (no WA links inside) -->
     <section id="contact" class="container section">
       <div class="section-head reveal"><h2>Contact</h2><p class="muted">fast response · partnerships</p></div>
       <div class="grid-2">
-        <div class="panel reveal"><h3>Send a message</h3><form onsubmit="event.preventDefault();sendMail()"><input id="name" placeholder="Name" style="display:block;width:100%;margin-bottom:1rem;padding:0.8rem;border-radius:16px;border:1px solid var(--border-med);background:var(--surface);color:var(--text);"><input id="email" placeholder="Email" style="display:block;width:100%;margin-bottom:1rem;padding:0.8rem;border-radius:16px;border:1px solid var(--border-med);background:var(--surface);"><textarea id="msg" placeholder="Message" rows="3" style="width:100%;padding:0.8rem;border-radius:16px;border:1px solid var(--border-med);background:var(--surface);"></textarea><button class="btn" type="submit">Send Email →</button></form></div>
-        <div class="panel reveal"><h3>Direct</h3><div style="display:grid;gap:0.8rem;"><a class="pill" href="mailto:kwabenaobengmunta@gmail.com"><span class="dot"></span>kwabenaobengmunta@gmail.com</a><a class="pill" href="https://linkedin.com/in/munta-kwabena-obeng-982511179/"><span class="dot"></span>LinkedIn</a></div></div>
+        <div class="panel reveal">
+          <h3>Send a message</h3>
+          <form onsubmit="event.preventDefault();sendMail()">
+            <input id="name" placeholder="Name" style="display:block;width:100%;margin-bottom:1rem;padding:0.8rem;border-radius:16px;border:1px solid var(--border-med);background:var(--surface);color:var(--text);">
+            <input id="email" placeholder="Email" style="display:block;width:100%;margin-bottom:1rem;padding:0.8rem;border-radius:16px;border:1px solid var(--border-med);background:var(--surface);">
+            <textarea id="msg" placeholder="Message" rows="3" style="width:100%;padding:0.8rem;border-radius:16px;border:1px solid var(--border-med);background:var(--surface);"></textarea>
+            <button class="btn" type="submit">Send Email →</button>
+          </form>
+        </div>
+        <div class="panel reveal">
+          <h3>Direct</h3>
+          <div style="display:grid;gap:0.8rem;">
+            <a class="pill" href="mailto:kwabenaobengmunta@gmail.com"><span class="dot"></span>kwabenaobengmunta@gmail.com</a>
+            <a class="pill" href="https://linkedin.com/in/munta-kwabena-obeng-982511179/"><span class="dot"></span>LinkedIn</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- WhatsApp button completely removed -->
-  <footer class="container" style="padding:2rem 0;border-top:1px solid var(--border-light);"><p class="small muted" style="text-align:center;">© <span id="year"></span> Munta Kwabena Obeng · BSc IT (Univ. of Ghana) · no underlines · images fill containers · mobile apps added</p></footer>
+  <footer class="container" style="padding:2rem 0;border-top:1px solid var(--border-light);">
+    <p class="small muted" style="text-align:center;">© <span id="year"></span> Munta Kwabena Obeng · 10+ years · BSc IT (Univ. of Ghana) · local & international</p>
+  </footer>
 
   <script>
+    function bookConsult() {
+      const name = document.getElementById('consultName').value;
+      const email = document.getElementById('consultEmail').value;
+      const phone = document.getElementById('consultPhone').value;
+      const topic = document.getElementById('consultTopic').value;
+      const message = `Hello Munta, I want to book a consultation. Name: ${name}, Email: ${email}, Phone: ${phone}, Topic: ${topic}`;
+      window.open(`https://wa.me/233594045086?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
     const reveals = document.querySelectorAll('.reveal');
-    new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add('show')),{threshold:0.15}).observe(document.querySelector('.hero')); reveals.forEach(r=>{if(r!==document.querySelector('.hero')) new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add('show')),{threshold:0.12}).observe(r)});
+    new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('show')), { threshold: 0.15 })
+      .observe(document.querySelector('.hero'));
 
-    // nav toggle
-    const t=document.getElementById('navToggle'),n=document.getElementById('navLinks');
-    t?.addEventListener('click',()=>n.classList.toggle('open'));
-    n?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=640)n.classList.remove('open');}));
+    reveals.forEach(r => {
+      if (r !== document.querySelector('.hero')) {
+        new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('show')), { threshold: 0.12 })
+          .observe(r);
+      }
+    });
 
-    // active nav
-    const spy=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){let s=e.target.id; document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+s));}})},{threshold:0.2});
-    ['about','author','ventures','projects','contact'].forEach(id=>{let el=document.getElementById(id); if(el)spy.observe(el);});
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      el.style.transitionDelay = `${Math.min(index * 0.05, 0.35)}s`;
+    });
 
-    document.getElementById('year').innerText=new Date().getFullYear();
-    function sendMail(){let n=encodeURIComponent(document.getElementById('name').value),e=encodeURIComponent(document.getElementById('email').value),m=encodeURIComponent(document.getElementById('msg').value); window.location.href=`mailto:kwabenaobengmunta@gmail.com?subject=Project%20Inquiry&body=Name%3A%20${n}%0AEmail%3A%20${e}%0A%0A${m}`;}
-    window.sendMail=sendMail;
+    const t = document.getElementById('navToggle'),
+          n = document.getElementById('navLinks');
+    t?.addEventListener('click', () => n.classList.toggle('open'));
+    n?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (window.innerWidth <= 640) n.classList.remove('open');
+    }));
 
-    // theme
-    const r=document.documentElement,to=document.getElementById('themeToggle'),ti=document.getElementById('themeIcon');
-    function setTheme(m){if(m==='dark'){r.setAttribute('data-theme','dark');ti.innerHTML='<path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5Z"/>';localStorage.setItem('theme','dark');}else{r.removeAttribute('data-theme');ti.innerHTML='<path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM12 4a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.07 7.07a1 1 0 0 1-1.41 0l-.7-.7a1 1 0 0 1 1.41-1.41l.7.7a1 1 0 0 1 0 1.41ZM7.05 7.05a1 1 0 0 1-1.41 0l-.7-.7A1 1 0 0 1 6.35 4.94l.7.7a1 1 0 0 1 0 1.41Zm11.02-2.11a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0ZM6.35 19.06a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0Z"/>';localStorage.setItem('theme','light');}}
-    const s=localStorage.getItem('theme'); if(s){setTheme(s);}else{setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
-    to.addEventListener('click',()=>{setTheme(r.getAttribute('data-theme')==='dark'?'light':'dark');});
+    const spy = new IntersectionObserver(e => {
+      e.forEach(e => {
+        if (e.isIntersecting) {
+          let s = e.target.id;
+          document.querySelectorAll('.nav-links a').forEach(a =>
+            a.classList.toggle('active', a.getAttribute('href') === '#' + s)
+          );
+        }
+      });
+    }, { threshold: 0.2 });
+
+    ['about','consultation','author','podcast','ventures','projects','contact'].forEach(id => {
+      let el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    function sendMail() {
+      let n = encodeURIComponent(document.getElementById('name').value),
+          e = encodeURIComponent(document.getElementById('email').value),
+          m = encodeURIComponent(document.getElementById('msg').value);
+      window.location.href = `mailto:kwabenaobengmunta@gmail.com?subject=Project%20Inquiry&body=Name%3A%20${n}%0AEmail%3A%20${e}%0A%0A${m}`;
+    }
+    window.sendMail = sendMail;
+
+    const r = document.documentElement,
+          to = document.getElementById('themeToggle'),
+          ti = document.getElementById('themeIcon');
+
+    function setTheme(m) {
+      if (m === 'dark') {
+        r.setAttribute('data-theme', 'dark');
+        ti.innerHTML = '<path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5Z"/>';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        r.removeAttribute('data-theme');
+        ti.innerHTML = '<path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM12 4a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.07 7.07a1 1 0 0 1-1.41 0l-.7-.7a1 1 0 0 1 1.41-1.41l.7.7a1 1 0 0 1 0 1.41ZM7.05 7.05a1 1 0 0 1-1.41 0l-.7-.7A1 1 0 0 1 6.35 4.94l.7.7a1 1 0 0 1 0 1.41Zm11.02-2.11a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0ZM6.35 19.06a1 1 0 0 1 0 1.41l-.7.7a1 1 0 0 1-1.41-1.41l.7-.7a1 1 0 0 1 1.41 0Z"/>';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    const s = localStorage.getItem('theme');
+    if (s) {
+      setTheme(s);
+    } else {
+      setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+
+    to.addEventListener('click', () => {
+      setTheme(r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
   </script>
 </body>
 </html>
